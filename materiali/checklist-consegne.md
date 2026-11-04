@@ -8,7 +8,7 @@ Ogni consegna va nel tuo repository, cartella `Consegne/Lxx/`, entro la fine del
 | 2 | Locomozione e comfort: verifica a percorso e prima scena del progetto | Nessun file da aggiungere: il lavoro salvato a Unity chiuso con `git salva "Lezione 02"` |
 | 3 | Set di interazioni funzionanti: verifica a stanze e prime interazioni nel progetto | Nessun file da aggiungere: il lavoro salvato a Unity chiuso con `git salva "Lezione 03"` |
 | 4 | **Pitch e blockout approvato** | Il concept (`concept.md`, dal pulsante del tutorial) e la pianta (`pianta.png`); il blockout resta nella scena `Progetto`, percorribile, e lo guarda il docente |
-| 5 | Report di profiling del blockout | Report (una pagina) + CSV del benchmark "prima" |
+| 5 | Report di profiling del blockout | Il report (`Consegne/L05/report.md`, dal pulsante del tutorial), con le condizioni della misura, chi sfora e come lo sai, i due test di Meta, Project Auditor e Memory Profiler; accanto, le misure del visore: i CSV del benchmark e, in `OVR Metrics/`, quelli di OVR Metrics |
 | 6 | Asset con LOD e culling | Screenshot dei LODGroup e dell'occlusion; misura prima/dopo |
 | 7 | Draw call ridotte e misurate | Tabella Draw Calls / SetPass prima/dopo |
 | 8 | Bake completo | Screenshot della Lighting window; misura GPU ms |
