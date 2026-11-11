@@ -4,8 +4,9 @@ using UnityEngine.Rendering;
 namespace Rufa
 {
     /// <summary>
-    /// A rounded shape with as many triangles as asked, built when the object switches on, in Edit mode too, and never
-    /// saved: from a metre away two million triangles look like two thousand, and only the statistics tell them apart.
+    /// A rounded shape with as many triangles as asked, built when the object switches on or its number changes, in Edit
+    /// mode too, and never saved: from a metre away two million triangles look like two thousand, and only the statistics
+    /// tell them apart.
     /// </summary>
     [ExecuteAlways, RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public sealed class DenseMesh : MonoBehaviour
@@ -13,9 +14,11 @@ namespace Rufa
         [Tooltip("How many triangles the shape has, at least.")]
         [Min(8)] public int triangles = 2000;
 
+        int Rings => Mathf.Max(2, Mathf.CeilToInt(Mathf.Sqrt(triangles / 2f)));   // n rings of n segments, two triangles each
+
         void OnEnable()
         {
-            int n = Mathf.Max(2, Mathf.CeilToInt(Mathf.Sqrt(triangles / 2f)));   // n rings of n segments, two triangles each
+            int n = Rings;
             var vertices = new Vector3[(n + 1) * (n + 1)];
             for (int ring = 0, v = 0; ring <= n; ring++)
                 for (int segment = 0; segment <= n; segment++, v++)
@@ -32,7 +35,7 @@ namespace Rufa
                     indices[i++] = a + 1; indices[i++] = b + 1; indices[i++] = b;
                 }
             var mesh = new Mesh { name = "Mesh densa", hideFlags = HideFlags.DontSave, indexFormat = IndexFormat.UInt32, vertices = vertices, triangles = indices };
-            mesh.RecalculateNormals();
+            mesh.normals = System.Array.ConvertAll(vertices, v => v.normalized);   // a sphere's own normals: no seam where the rings close
             GetComponent<MeshFilter>().sharedMesh = mesh;
         }
 
@@ -42,5 +45,17 @@ namespace Rufa
             if (filter.sharedMesh != null) DestroyImmediate(filter.sharedMesh);
             filter.sharedMesh = null;
         }
+
+#if UNITY_EDITOR
+        // A number typed in the Inspector rebuilds the shape at once; a moment later, because OnValidate must not swap meshes.
+        void OnValidate() => UnityEditor.EditorApplication.delayCall += () =>
+        {
+            if (this == null || !isActiveAndEnabled) return;
+            var mesh = GetComponent<MeshFilter>().sharedMesh;
+            if (mesh != null && mesh.GetIndexCount(0) == 6L * Rings * Rings) return;   // already the shape asked for
+            OnDisable();
+            OnEnable();
+        };
+#endif
     }
 }

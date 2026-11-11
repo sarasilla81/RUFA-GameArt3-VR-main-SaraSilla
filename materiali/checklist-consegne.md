@@ -9,7 +9,7 @@ Ogni consegna va nel tuo repository, cartella `Consegne/Lxx/`, entro la fine del
 | 3 | Set di interazioni funzionanti: verifica a stanze e prime interazioni nel progetto | Nessun file da aggiungere: il lavoro salvato a Unity chiuso con `git salva "Lezione 03"` |
 | 4 | **Pitch e blockout approvato** | Il concept (`concept.md`, dal pulsante del tutorial) e la pianta (`pianta.png`); il blockout resta nella scena `Progetto`, percorribile, e lo guarda il docente |
 | 5 | Report di profiling del blockout | Il report (`Consegne/L05/report.md`, dal pulsante del tutorial), con le condizioni della misura, chi sfora e come lo sai, i due test di Meta, Project Auditor e Memory Profiler; accanto, le misure del visore: i CSV del benchmark e, in `OVR Metrics/`, quelli di OVR Metrics |
-| 6 | Asset con LOD e culling | Screenshot dei LODGroup e dell'occlusion; misura prima/dopo |
+| 6 | La geometria nel museo, nel laboratorio e nel proprio blockout: LOD, culling e le opere preparate in Blender | Il file delle misure (`Consegne/L06/misure.md`, dal pulsante del tutorial) e le foto del prima e del dopo: le quattro parti del museo, le nicchie del laboratorio e la `Camera foto` del progetto |
 | 7 | Draw call ridotte e misurate | Tabella Draw Calls / SetPass prima/dopo |
 | 8 | Bake completo | Screenshot della Lighting window; misura GPU ms |
 | 9 | Audit e ricompressione delle texture | Tabella dell'audit prima/dopo; dimensione APK |

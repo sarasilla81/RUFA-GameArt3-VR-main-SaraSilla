@@ -84,6 +84,13 @@ namespace Rufa.Editor
             ["luci-senza-ombre"] = a => EditorApplication.isPlaying && ProfilingChecks.ShadowlessLights(a[0]),
             // Out of Play only, like the measures: a culprit switched off in Play comes back when Play stops.
             ["colpevole"] = a => !EditorApplication.isPlaying && ProfilingChecks.CulpritOff(a[0], a[1]),
+            // A room of the museum cured without switching off, moving or deleting anything in it.
+            ["lod-su"] = a => !EditorApplication.isPlaying && GeometryChecks.CuredWithLod(a[0], a[1]),
+            ["occlusion-su"] = a => !EditorApplication.isPlaying && GeometryChecks.CuredWithOcclusion(a[0], a[1]),
+            // The lab: the back nobody sees cut away in the 3D program, Unity's own LODs on import, the hard edges smoothed.
+            ["retro-tolto"] = a => !EditorApplication.isPlaying && GeometryChecks.BackRemoved(a[0], a[1], (int)Number(a[2]), (int)Number(a[3]), Number(a[4])),
+            ["mesh-lod"] = a => GeometryChecks.HasMeshLods(a[0]),
+            ["vertici-al-massimo"] = a => !EditorApplication.isPlaying && GeometryChecks.FewVertices(a[0], a[1], (int)Number(a[2])),
             // The sky and the fog of the Lighting window: a panorama takes its depth from both
             ["panorama"] = a => !EditorApplication.isPlaying && RenderSettings.skybox != null && RenderSettings.skybox.name == a[0]
                                 && RenderSettings.fog && RenderSettings.fogMode == FogMode.Linear && RenderSettings.fogEndDistance >= Number(a[1]),
@@ -111,6 +118,8 @@ namespace Rufa.Editor
             ["apri-cartella-benchmark"] = _ => { Directory.CreateDirectory(Application.persistentDataPath); EditorUtility.OpenWithDefaultApp(Application.persistentDataPath); },
             ["scarica-misure"] = a => ProfilingChecks.PullMeasures(a[0], ProfilingChecks.Adb),
             ["crea-report"] = a => EditorUtility.OpenWithDefaultApp(ProfilingChecks.CreateReport(a[0])),
+            ["foto-camera"] = a => GeometryChecks.Photo(a[0], a[1]),
+            ["crea-misure"] = a => EditorUtility.OpenWithDefaultApp(GeometryChecks.CreateMeasures(a[0])),
         };
 
         public static bool Exists(string id) => Checks.ContainsKey(id) || Actions.ContainsKey(id);

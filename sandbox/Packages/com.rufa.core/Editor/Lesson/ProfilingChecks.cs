@@ -44,9 +44,13 @@ namespace Rufa.Editor
             var root = GameObject.Find(room);
             var found = root == null ? null : root.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == culprit);
             if (found == null || found.gameObject.activeSelf) return false;
-            return root.GetComponentsInChildren<Transform>(true).Where(t => !t.IsChildOf(found))
-                .All(t => t.gameObject.activeSelf && t.GetComponents<Component>().All(On));
+            return AllOn(root.transform, found);
         }
+
+        /// <summary>Everything under the root is on, components included, except the given branch.</summary>
+        public static bool AllOn(Transform root, Transform except = null) =>
+            root.GetComponentsInChildren<Transform>(true).Where(t => except == null || !t.IsChildOf(except))
+                .All(t => t.gameObject.activeSelf && t.GetComponents<Component>().All(On));
 
         static bool On(Component c) => c is Behaviour b ? b.enabled : c is Renderer r ? r.enabled : !(c is Collider collider) || collider.enabled;
 

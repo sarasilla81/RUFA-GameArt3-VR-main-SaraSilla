@@ -30,3 +30,20 @@ All models come from Poly Haven under the CC0 licence (public domain): they can 
 | side_table_01 | Salotto_Tavolino | [Side Table 01](https://polyhaven.com/a/side_table_01), James Ray Cock | CC0 |
 | book_encyclopedia_set_01 | Studio_Libri | [Book Encyclopedia Set 01](https://polyhaven.com/a/book_encyclopedia_set_01), John Malcolm | CC0 |
 | WoodenTable_03 | Studio_Scrivania | [Wooden Table 03](https://polyhaven.com/a/WoodenTable_03), Gabriel Radić | CC0 |
+
+## Artworks of the museum (lesson 6)
+
+In `Museo/`, at full resolution, as Poly Haven publishes them. The `_LOD1` and `_LOD2` files are the same models decimated to 50% and 15% of their triangles, for a LOD Group.
+
+| Model | Source and author | Licence |
+|---|---|---|
+| marble_bust_01 | [Marble Bust 01](https://polyhaven.com/a/marble_bust_01), Rico Cilliers | CC0 |
+| gothic_statue | [Gothic Statue](https://polyhaven.com/a/gothic_statue), Benny Weimer | CC0 |
+| horse_statue_01 | [Horse Statue 01](https://polyhaven.com/a/horse_statue_01), Rico Cilliers | CC0 |
+| antique_ceramic_vase_01 | [Antique Ceramic Vase 01](https://polyhaven.com/a/antique_ceramic_vase_01), James Ray Cock | CC0 |
+| brass_vase_01 | [Brass Vase 01](https://polyhaven.com/a/brass_vase_01), Rico Cilliers | CC0 |
+| pocket_watch | [Pocket Watch](https://polyhaven.com/a/pocket_watch), PierreB3D | CC0 |
+| seadogs_compass | [Seadogs Compass](https://polyhaven.com/a/seadogs_compass), Benny Weimer | CC0 |
+| round_spectacles | [Round Spectacles](https://polyhaven.com/a/round_spectacles), Sean Buckley | CC0 |
+
+The lab of the museum uses two copies, so that the students' changes stay off the originals: `busto_nicchia.fbx` is marble_bust_01, and `vaso_sfaccettato.fbx` is antique_ceramic_vase_01 imported with every edge hard (Normals: Calculate, Smoothness Source: From Angle, Smoothing Angle: 0).
