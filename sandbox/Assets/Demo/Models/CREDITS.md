@@ -47,3 +47,28 @@ In `Museo/`, at full resolution, as Poly Haven publishes them. The `_LOD1` and `
 | round_spectacles | [Round Spectacles](https://polyhaven.com/a/round_spectacles), Sean Buckley | CC0 |
 
 The lab of the museum uses two copies, so that the students' changes stay off the originals: `busto_nicchia.fbx` is marble_bust_01, and `vaso_sfaccettato.fbx` is antique_ceramic_vase_01 imported with every edge hard (Normals: Calculate, Smoothness Source: From Angle, Smoothing Angle: 0).
+
+In `Mercato/`, the goods of the lesson 7 market, decimated to a few hundred triangles each: there the cost is in the objects and their materials.
+
+| Model | Source and author | Licence |
+|---|---|---|
+| food_apple_01 | [Food Apple 01](https://polyhaven.com/a/food_apple_01), Oliver Harries | CC0 |
+| food_pears_asian_01 | [Pears Asian 01](https://polyhaven.com/a/food_pears_asian_01), Amal Kumar | CC0 |
+| lemon | [Lemon](https://polyhaven.com/a/lemon), Kuutti Siitonen | CC0 |
+| food_lime_01 | [Food Lime 01](https://polyhaven.com/a/food_lime_01), Oliver Harries | CC0 |
+| food_kiwi_01 | [Food Kiwi 01](https://polyhaven.com/a/food_kiwi_01), Oliver Harries | CC0 |
+| food_pomegranate_01 | [Food Pomegranate 01](https://polyhaven.com/a/food_pomegranate_01), Oliver Harries | CC0 |
+| food_avocado_01 | [Food Avocado 01](https://polyhaven.com/a/food_avocado_01), Oliver Harries | CC0 |
+| food_lychee_01 | [Food Lychee 01](https://polyhaven.com/a/food_lychee_01), Oliver Harries | CC0 |
+| wicker_basket_01 | [Wicker Basket 01](https://polyhaven.com/a/wicker_basket_01), Kuutti Siitonen | CC0 |
+| wooden_bowl_01 | [Wooden Bowl 01](https://polyhaven.com/a/wooden_bowl_01), Oliver Harries | CC0 |
+| carved_wooden_plate | [Carved Wooden Plate](https://polyhaven.com/a/carved_wooden_plate), Jan Martens | CC0 |
+| carrot_cake | [Carrot Cake](https://polyhaven.com/a/carrot_cake), Greg Zaal, James Ray Cock | CC0 |
+| strawberry_chocolate_cake | [Strawberry Chocolate Cake](https://polyhaven.com/a/strawberry_chocolate_cake), Kuutti Siitonen | CC0 |
+| croissant | [Croissant](https://polyhaven.com/a/croissant), Greg Zaal, Dario Barresi | CC0 |
+| hamburger_buns | [Hamburger Buns](https://polyhaven.com/a/hamburger_buns), Alexander Shulha | CC0 |
+| bar_chair_round_01 | [Bar Chair Round 01](https://polyhaven.com/a/bar_chair_round_01), Dairon Sanchez | CC0 |
+| round_wooden_table_02 | [Round Wooden Table 02](https://polyhaven.com/a/round_wooden_table_02), Ulan Cabanilla | CC0 |
+| hanging_industrial_lamp | [Hanging Industrial Lamp](https://polyhaven.com/a/hanging_industrial_lamp), Kuutti Siitonen | CC0 |
+
+`cassetta_mista.fbx`, the mixed crate of the lab, puts together five of the fruits above, each with its own material: food_pomegranate_01, food_avocado_01, food_kiwi_01, food_lime_01 and lemon.

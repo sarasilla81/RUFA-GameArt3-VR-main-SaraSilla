@@ -91,6 +91,17 @@ namespace Rufa.Editor
             ["retro-tolto"] = a => !EditorApplication.isPlaying && GeometryChecks.BackRemoved(a[0], a[1], (int)Number(a[2]), (int)Number(a[3]), Number(a[4])),
             ["mesh-lod"] = a => GeometryChecks.HasMeshLods(a[0]),
             ["vertici-al-massimo"] = a => !EditorApplication.isPlaying && GeometryChecks.FewVertices(a[0], a[1], (int)Number(a[2])),
+            // The market: a stall cured without switching off, moving or deleting its goods; the crate drawn with its atlas.
+            ["srp-batcher-acceso"] = _ => DrawCallChecks.SrpBatcherOn(),
+            // The experiment's first page: a page done together counts once, so switching off and on are two pages.
+            ["srp-batcher-spento"] = _ => !DrawCallChecks.SrpBatcherOn(),
+            // On Android the editor draws with the Mobile quality level: other numbers, and the PC asset is not the one in use.
+            ["piattaforma-pc"] = _ => BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget) == BuildTargetGroup.Standalone,
+            ["una-variante"] = a => !EditorApplication.isPlaying && DrawCallChecks.OneVariant(a[0], a[1]),
+            ["materiali-al-massimo"] = a => !EditorApplication.isPlaying && DrawCallChecks.MaterialsAtMost(a[0], (int)Number(a[1])),
+            ["statici"] = a => !EditorApplication.isPlaying && DrawCallChecks.AllStatic(a[0]),
+            ["trasparenti-fra"] = a => !EditorApplication.isPlaying && DrawCallChecks.TransparentsBetween(a[0], (int)Number(a[1]), (int)Number(a[2]), a[3]),
+            ["un-materiale"] = a => !EditorApplication.isPlaying && DrawCallChecks.OneMaterial(a[0]),
             // The sky and the fog of the Lighting window: a panorama takes its depth from both
             ["panorama"] = a => !EditorApplication.isPlaying && RenderSettings.skybox != null && RenderSettings.skybox.name == a[0]
                                 && RenderSettings.fog && RenderSettings.fogMode == FogMode.Linear && RenderSettings.fogEndDistance >= Number(a[1]),

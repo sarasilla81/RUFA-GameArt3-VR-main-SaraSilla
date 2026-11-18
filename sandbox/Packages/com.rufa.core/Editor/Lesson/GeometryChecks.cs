@@ -77,7 +77,7 @@ namespace Rufa.Editor
         }
 
         // Nothing switched off, moved or deleted: the cure is in the craft, not in hiding things.
-        static bool Untouched(GameObject root) =>
+        internal static bool Untouched(GameObject root) =>
             ProfilingChecks.AllOn(root.transform) && root.TryGetComponent(out EnvironmentSnapshot snapshot) && snapshot.Changes().Count == 0;
 
         /// <summary>
@@ -106,10 +106,11 @@ namespace Rufa.Editor
             Debug.Log($"RUFA: photo of {cameraName} saved in {path}.");
         }
 
-        /// <summary>The file of the lesson's measures, from its template. Returns the full path.</summary>
-        public static string CreateMeasures(string path) => LevelChecks.FromTemplate(path, MeasuresTemplate);
+        /// <summary>The file of a lesson's measures, from the template of its folder (L07, or else lesson 6's). Returns the full path.</summary>
+        public static string CreateMeasures(string path) =>
+            LevelChecks.FromTemplate(path, Path.GetFileName(Path.GetDirectoryName(path)) == "L07" ? DrawCallChecks.MeasuresTemplate : MeasuresTemplate);
 
-        const string MeasuresTemplate =
+        public const string MeasuresTemplate =
 @"# Le misure della lezione 6
 
 Al posto di ogni segnaposto tra « » scrivi il tuo numero o il tuo testo. Le foto stanno in questa cartella.
