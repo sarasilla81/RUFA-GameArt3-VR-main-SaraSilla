@@ -1,7 +1,7 @@
 {
   "name": "com.rufa.core",
   "displayName": "RUFA Core",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "unity": "6000.3",
   "description": "Dual-target runtime and editor tooling for the Game Art 3 course: spawns a VR rig on Meta Quest or a desktop rig on PC, and configures and builds the project from menu items.",
   "author": {
@@ -43,6 +43,11 @@
       "displayName": "Lezione 07 - Draw call",
       "description": "Palestra della lezione 7: il mercato coperto, col banco della frutta da curare insieme, tre banchi da curare da soli e le cassette del laboratorio.",
       "path": "Samples~/Lezione 07 - Draw call"
+    },
+    {
+      "displayName": "Lezione 08 - Luce",
+      "description": "Palestra della lezione 8: il faro, col soggiorno da cuocere insieme, l'officina, la scala e la lanterna da cuocere da soli, e lo scaffale del laboratorio.",
+      "path": "Samples~/Lezione 08 - Luce"
     }
   ]
 }

@@ -102,6 +102,16 @@ namespace Rufa.Editor
             ["statici"] = a => !EditorApplication.isPlaying && DrawCallChecks.AllStatic(a[0]),
             ["trasparenti-fra"] = a => !EditorApplication.isPlaying && DrawCallChecks.TransparentsBetween(a[0], (int)Number(a[1]), (int)Number(a[2]), a[3]),
             ["un-materiale"] = a => !EditorApplication.isPlaying && DrawCallChecks.OneMaterial(a[0]),
+            // The lighthouse: a room cured by baking its light, without switching off, moving or deleting anything.
+            ["luci-cotte"] = a => !EditorApplication.isPlaying && LightingChecks.LightsBaked(a[0], a.Length > 1 ? a[1] : null),
+            ["statici-luce"] = a => !EditorApplication.isPlaying && LightingChecks.StaticForLight(a[0], a[1]),
+            ["luce-cotta"] = _ => !EditorApplication.isPlaying && LightingChecks.Baked(),
+            ["emissione-cotta"] = a => !EditorApplication.isPlaying && LightingChecks.EmissionBaked(a[0]),
+            ["probe-attorno"] = a => !EditorApplication.isPlaying && LightingChecks.ProbesAround(a[0], (int)Number(a[1])),
+            ["riflesso-cotto"] = a => !EditorApplication.isPlaying && LightingChecks.ReflectionBaked(a[0]),
+            ["luce-viva"] = a => !EditorApplication.isPlaying && LightingChecks.LiveLight(a[0]),
+            ["lightmap-al-massimo"] = a => !EditorApplication.isPlaying && LightingChecks.LightmapsAtMost(Number(a[0]), a[1]),
+            ["uv-luce"] = a => LightingChecks.HandMadeLightmapUvs(a[0]),
             // The sky and the fog of the Lighting window: a panorama takes its depth from both
             ["panorama"] = a => !EditorApplication.isPlaying && RenderSettings.skybox != null && RenderSettings.skybox.name == a[0]
                                 && RenderSettings.fog && RenderSettings.fogMode == FogMode.Linear && RenderSettings.fogEndDistance >= Number(a[1]),

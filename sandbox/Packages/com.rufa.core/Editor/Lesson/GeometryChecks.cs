@@ -106,9 +106,13 @@ namespace Rufa.Editor
             Debug.Log($"RUFA: photo of {cameraName} saved in {path}.");
         }
 
-        /// <summary>The file of a lesson's measures, from the template of its folder (L07, or else lesson 6's). Returns the full path.</summary>
-        public static string CreateMeasures(string path) =>
-            LevelChecks.FromTemplate(path, Path.GetFileName(Path.GetDirectoryName(path)) == "L07" ? DrawCallChecks.MeasuresTemplate : MeasuresTemplate);
+        /// <summary>The file of a lesson's measures, from the template of its folder (L08, L07, or else lesson 6's). Returns the full path.</summary>
+        public static string CreateMeasures(string path) => LevelChecks.FromTemplate(path, Path.GetFileName(Path.GetDirectoryName(path)) switch
+        {
+            "L08" => LightingChecks.MeasuresTemplate,
+            "L07" => DrawCallChecks.MeasuresTemplate,
+            _ => MeasuresTemplate,
+        });
 
         public const string MeasuresTemplate =
 @"# Le misure della lezione 6

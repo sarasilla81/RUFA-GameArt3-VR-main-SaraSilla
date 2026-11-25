@@ -97,6 +97,9 @@ namespace Rufa.Editor
             probe.size = bounds.size;
             probe.resolution = 128;
             probe.boxProjection = true;
+            // URP fades a probe into the sky over Blend Distance inside its box: at Unity's 1 m, what hangs on the walls of the
+            // box would still show the sky. One box per room, nothing to fade into.
+            probe.blendDistance = 0.1f;
             return probe;
         }
 
